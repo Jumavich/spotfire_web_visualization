@@ -1,0 +1,66 @@
+
+<html> 
+	<head>
+
+		<script type="text/javascript" src="https://spotfire.chiltern.com/spotfire/wp/GetJavaScriptApi.ashx?Version=7.5"></script>
+
+		<script>
+ 
+		var c_serverUrl = "https://spotfire.chiltern.com/spotfire/wp/";
+		var c_analysisPath = "/Projects/CIL/UserAccess/Dev/UserAccessv1";
+
+		var c_parameters = "";  //Optional configuration block
+		var customization = new spotfire.webPlayer.Customization();  //Optional configuration settings
+
+		var app;
+
+		var c_reloadAnalysisInstance = false;
+
+		window.onload = function()
+        {
+		app = new spotfire.webPlayer.Application(c_serverUrl, customization, c_analysisPath, c_parameters, c_reloadAnalysisInstance);
+   
+		//Hide UI elements
+		customization.showDodPanel = false;
+		customization.showStatusBar = false;
+		customization.showToolBar = false;
+		customization.showPageNavigation = false;
+		customization.showClose = false;
+		customization.showAnalysisInfo = true;
+		customization.showExportFile = false;
+		customization.showExportVisualization = false;
+		customization.showUndoRedo = true;
+		customization.showFilterPanel = false;
+
+		var viewOne = app.openDocument("demoViz", "AllUsers", customization);
+		//var viewTwo = app.openDocument("demoViz2", "Users & Packages - Sponsors", customization);
+
+
+		}
+		</script>
+	</head>
+	
+	<body>
+		<div id="demoViz"></div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
